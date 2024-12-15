@@ -15,6 +15,7 @@ The script can install the following applications:
 - **Timeshift:** Backup and restore utility.
 - **Network Manager Gnome:** Network manager with GUI.
 ### Development Tools
+- **Git** Version control.
 - **Python and PIP:** Python development.
 - **GCC and G++** Compilers for C/C++ devlopment.
 - **Amazon Corretto JDK** Java development.
@@ -56,23 +57,28 @@ The script can install the following applications:
 ## Prerequisites
 - A clean installation of Debian 12.
 - Root or sudo privileges.
-
+- Make sure you have the necessary tools (wget, unzip) installed.
+    ```bash
+    sudo apt install -y wget unzip
+    ```
 ## Execution
-Download the script using the command line:
+Download the repository from the URL and extract into the /tmp directory
 
 ```bash
-wget -P /tmp/ https://github.com/deArrudal/debian12-installationscript/blob/main/script/setup.sh
-wget -P /tmp/ https://github.com/deArrudal/debian12-installationscript/blob/main/script/setup.conf
+wget -O /tmp/debian12-installationscript.zip https://github.com/deArrudal/debian12-installationscript/archive/refs/heads/main.zip
+unzip /tmp/debian12-installationscript.zip -d /tmp
+
 ```
-Once downloaded, make the script executable:
+Navigate to the script directory and make it executable:
 
 ```bash
-chmod +x /tmp/setup.sh
+cd /tmp/debian12-installationscript-main/script
+chmod +x ./setup.sh
 ```
 Run the script with:
 
 ```bash
-sudo /tmp/setup.sh
+sudo ./setup.sh
 ```
 
 During execution:

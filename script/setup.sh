@@ -73,10 +73,16 @@ if [[ -z "$INSTALL_NETWORK_MANAGER" || "$INSTALL_NETWORK_MANAGER" == "true" ]]; 
     sudo apt install -y network-manager-gnome || { echo -e "\e[1;31m[ERROR]\e[0m Failed to install Network Manager."; exit 1; }
 fi
 
+# Install Git
+if [[ -z "$INSTALL_GIT" || "$INSTALL_GIT" == "true" ]]; then
+    echo_status "Installing Git"
+    sudo apt install -y git || { echo -e "\e[1;31m[ERROR]\e[0m Failed to install Git."; exit 1; }
+fi
+
 # Install Python and PIP if not already installed
 if [[ -z "$INSTALL_PYTHON" || "$INSTALL_PYTHON" == "true" ]]; then
     echo_status "Installing Python and PIP"
-    sudo apt install -y python3-pip || { echo -e "\e[1;31m[ERROR]\e[0m Failed to install Python and PIP."; exit 1; }
+    sudo apt install -y python3 python3-pip || { echo -e "\e[1;31m[ERROR]\e[0m Failed to install Python and PIP."; exit 1; }
 fi
 
 # Install GCC and G++ for C/C++
@@ -122,6 +128,7 @@ fi
 # Install and configure MySQL
 if [[ -z "$INSTALL_MYSQL" || "$INSTALL_MYSQL" == "true" ]]; then
     echo_status "Installing and configuring MySQL"
+    export DEBIAN_FRONTEND=noninteractive
     wget https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb -P /tmp/
     sudo dpkg -i /tmp/mysql-apt-config_0.8.33-1_all.deb
     sudo apt update
