@@ -61,8 +61,8 @@ The script can install the following applications:
 Download the script using the command line:
 
 ```bash
-wget -P /tmp/ https://github.com/deArrudal/debian12-installationscript/script/setup.sh
-wget -P /tmp/ https://github.com/deArrudal/debian12-installationscript/script/setup.conf
+wget -P /tmp/ https://github.com/deArrudal/debian12-installationscript/blob/main/script/setup.sh
+wget -P /tmp/ https://github.com/deArrudal/debian12-installationscript/blob/main/script/setup.conf
 ```
 Once downloaded, make the script executable:
 
