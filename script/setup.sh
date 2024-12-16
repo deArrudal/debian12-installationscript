@@ -128,7 +128,6 @@ fi
 # Install and configure MySQL
 if [[ -z "$INSTALL_MYSQL" || "$INSTALL_MYSQL" == "true" ]]; then
     echo_status "Installing and configuring MySQL"
-    export DEBIAN_FRONTEND=noninteractive
     wget https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb -P /tmp/
     sudo dpkg -i /tmp/mysql-apt-config_0.8.33-1_all.deb
     sudo apt update

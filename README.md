@@ -103,13 +103,14 @@ Ensure the configuration file is in the same directory as the script or provide 
 ## Log File
 The script generates a log file (`setup.log`) in the current directory. Use this file to troubleshoot any issues.
 
+## Common Issues
+Due to the graphical interface used by MySQL during installation to configure the APT, you must run its installation after rebooting.
+
 ## Authors
 
  - deArruda, Lucas [@SardinhaArruda](https://twitter.com/SardinhaArruda)
 
-
 ## License
-
 This project is licensed under the GPL-3.0 License - see the LICENSE.md file for details
 
 ---
